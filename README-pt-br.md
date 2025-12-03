@@ -1,21 +1,20 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
 [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](README-pt-br.md)
 
-# 💻 Web Development Practice Projects
+# 💻 Projetos de Desenvolvimento Web
 
-This repository is a dedicated space for my ongoing **web development practice projects**. The main goal is to document my learning journey, showcase my practical skills, and demonstrate my development capabilities over time.
-
+Este repositório é um espaço dedicado para os **projetos** que desenvolvi para praticar **desenvolvimento web**. O objetivo principal é documentar meu aprendizado, e demonstrar minhas habilidades práticas e meu desenvolvimento ao longo do tempo.
 ---
 
-## 🚀 Projects Overview
+## 🚀 Projetos
 
-Below is a list of the projects contained within this repository, categorized by the technologies and complexity involved.
+Abaixo está uma lista dos projetos contidos neste repositório, categorizado por tecnologias e complexidade envolvida.
 
 ### **Foundational Projects (HTML/CSS/JS Basics)**
 
-| Project Name | Technologies | Focus / Learning Objective | Link to Code |
+| Nome do Projeto | Tecnologias | Foco / Objetivo de Aprendizado | Link do Projeto |
 | :--- | :--- | :--- | :--- |
-| **01-android-page** | HTML, CSS | Semantic HTML structure, basic CSS layout, responsiveness. | [Project Folder](./01-android-page) |
+| **01-android-page** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade. | [Pasta do Projeto](./01-android-page) |
 <!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) |
 | **03-Landing-Page** | HTML, CSS | Responsive design (Flexbox/Grid), modern visual styling. | [Project Folder](./03-Landing-Page) | -->
 
@@ -27,14 +26,14 @@ Below is a list of the projects contained within this repository, categorized by
 | **05-[NAME]** | React, API | Fetching and displaying data from a public API, async operations. | [Project Folder](./05-Weather-Dashboard) |
 | **06-[NAME]** | Vue.js, Vue Router | Routing, reusable components, modular design. | [Project Folder](./06-Blog-Platform-Vue) | -->
 
-## 🛠️ Tech Stack & Tools
+## 🛠️ Tecnologias & Ferramentas
 
-The projects primarily use the following technologies:
+Os projetos foram desenvolvidos utilizando as seguintes tecnologias:
 
 * **Frontend:** HTML5, CSS3 <!--, JavaScript (ES6+) -->
 <!-- * **Libraries/Frameworks:** React, Vue.js -->
 <!-- * **Styling:** Custom CSS, Tailwind CSS, SASS (as noted in project specifics) -->
-* **Version Control:** Git & GitHub
+* **Controle de versão/Versionamento:** Git & GitHub
 
 ---
 
