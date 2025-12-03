@@ -53,9 +53,10 @@ h2, h3 {
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    margin: auto;
     max-width: 370px;
-    margin: 20px auto 16px auto;
     font-family: Arial, Helvetica, sans-serif;
 }
 nav.header-nav {
@@ -89,6 +90,7 @@ main {
     padding-bottom: 32px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    min-width: 350px;
     max-width: 750px;
     margin: auto;
 }
@@ -96,13 +98,12 @@ main {
     text-indent: 20px;
     text-align: justify;
     line-height: 1.4em;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 #topic-title {
     margin-bottom: 12px;
 }
 #topic-info {
-    /* display: inline-block; */
     margin-bottom: 12px;
 }
 
@@ -172,6 +173,7 @@ h3.subtopic-title {
     padding-left: 6px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
+
 /* Footer */
 #footer-description {
     font-family: Arial, Helvetica, sans-serif;
