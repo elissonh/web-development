@@ -1,0 +1,95 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+:root {
+    --header-color: #040549;
+    --header-color2: #36089E;
+    --footer-color: #040549;
+    --background-color: white;
+    --title-text-color: white;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+}
+
+/* Header */
+* {
+    margin: 0;
+}
+header {
+    background: linear-gradient(var(--header-color), var(--header-color2));
+    padding-top: 48px;
+    padding-bottom: 40px;
+}
+#header-title {
+    font-family: "Passion One", sans-serif;
+    font-size: 7vw;
+    color: var(--title-text-color);
+    text-align: center;
+    margin-bottom: 6px;
+}
+header > p {
+    color: var(--title-text-color);
+    font-size: 1em;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.external-link {
+    color: var(--title-text-color);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Main */
+main p {
+    font-family: "Sriracha", cursive;
+    font-size: 3vw;
+    line-height: 2em;
+    display: inline-block;
+}
+.stanza {
+    padding-left: 32px;
+    color: black;
+    margin: 64px 0px;
+    background-color: var(--background-color);
+}
+.background01 p, .background02 p {
+    color: var(--secondary-text-color);
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 64px 0px;
+    padding: 6px;
+}
+.with-background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.background01 {
+    background-image: url("../assets/imagens/background003.jpg");
+}
+.background02 {
+    background-image: url("../assets/imagens/background004.jpg");
+    background-position: left center;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-color);
+    text-align: center;
+}
+footer > p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--title-text-color);
+    padding: 12px;
+}
+.footer-external-link{
+    font-weight: bold;
+    text-decoration: none;
+}
+.footer-external-link:hover{
+    text-decoration: underline;
+}
+.footer-external-link:visited {
+    color: var(--title-text-color);
+}
