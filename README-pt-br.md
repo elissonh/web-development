@@ -15,6 +15,7 @@ Abaixo está uma lista dos projetos contidos neste repositório, categorizado po
 | Nome do Projeto | Tecnologias | Foco / Objetivo de Aprendizado | Link do Projeto |
 | :--- | :--- | :--- | :--- |
 | **01-android-page** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade. | [Pasta do Projeto](./01-android-page) |
+| **02-cordel-literature-page** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade de textos, imagens de fundo. | [Pasta do Projeto](./02-cordel-literature-page) | -->
 <!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) |
 | **03-Landing-Page** | HTML, CSS | Responsive design (Flexbox/Grid), modern visual styling. | [Project Folder](./03-Landing-Page) | -->
 

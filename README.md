@@ -16,8 +16,8 @@ Below is a list of the projects contained within this repository, categorized by
 | Project Name | Technologies | Focus / Learning Objective | Link to Code |
 | :--- | :--- | :--- | :--- |
 | **01-android-page** | HTML, CSS | Semantic HTML structure, basic CSS layout, responsiveness. | [Project Folder](./01-android-page) |
-<!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) |
-| **03-Landing-Page** | HTML, CSS | Responsive design (Flexbox/Grid), modern visual styling. | [Project Folder](./03-Landing-Page) | -->
+| **02-cordel-literature-page** | HTML, CSS | Semantic HTML structure, basic CSS layout, responsiveness text, background images. | [Project Folder](./02-cordel-literature-page) | -->
+<!-- <!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) | -->
 
 <!-- ### **Intermediate Projects (Frameworks/Libraries)**
 
