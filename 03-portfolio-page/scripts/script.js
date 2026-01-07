@@ -1,40 +1,49 @@
-const botao = document.getElementById('botao-tema');
 const body = document.body;
+const saved_theme = localStorage.getItem('theme');
 
-// Persistência do tema
-const temasalvo = localStorage.getItem('tema');
-temaEscuro(temasalvo === 'escuro');
+initializeTheme()
 
-// Função para alternar entre tema claro e escuro
-function temaEscuro(tipo) {
-  if (tipo == true) {
-    body.classList.add('escuro');
-    botao.innerHTML = '<i class="fa-solid fa-sun"></i>';
-  } else {
-    body.classList.remove('escuro');
-    botao.innerHTML = '<i class="fa-solid fa-moon"></i>';
-  }
+function initializeTheme() {
+    if (saved_theme === null ) {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            body.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    } 
+    if (saved_theme === 'dark') {
+        body.classList.add('dark');
+    }
 }
 
-botao.addEventListener('click', () => {
-  const isescuro = body.classList.toggle('escuro');
-  temaEscuro(isescuro);
-  localStorage.setItem('tema', isescuro ? 'escuro' : 'claro');
-});
-
-// Scroll suave para links de navegação
-const navLinks = document.querySelectorAll('#menu ul a.link');
-navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const targetPosition = target.offsetTop - headerHeight - 20;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+// Function to alternate between light and dark mode
+function updateTheme() {
+    const theme_button = document.getElementById('theme-button');
+    if (body.classList.contains("dark")) {
+        body.classList.remove('dark');
+        theme_button.getElementsByTagName("span")[0].textContent = "dark_mode";
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.classList.add('dark');
+        theme_button.getElementsByTagName("span")[0].textContent = "light_mode";
+        localStorage.setItem('theme', 'dark');
     }
-  });
+}
+
+// Scroll to navigation links
+const navLinks = document.querySelectorAll('#menu ul.menu-links a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
