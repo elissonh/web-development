@@ -49,6 +49,9 @@ body.dark {
 .right-side {
     margin-left: auto;
 }
+.indented {
+    text-indent: 2rem;
+}
 
 /* Header */
 header {
@@ -88,7 +91,6 @@ main {
     margin-top: 1.5rem;
 }
 main p {
-    text-align: justify;
     line-height: 1.4rem;
 }
 
@@ -201,13 +203,16 @@ main p {
     min-width: 100%;
     padding: .5rem;
     border-radius: var(--card-border-radius);
-    aspect-ratio: 5/3;
     scroll-snap-align: start;
 }
 .carousel-item img {
     width: 100%;
+    aspect-ratio: 16/9;
     border-radius: var(--card-border-radius);
     object-fit: cover;
+}
+.carousel-item p, .carousel-item summary {
+    font-size: .9rem;
 }
 
 /* Footer */
@@ -227,22 +232,8 @@ footer a {
     text-decoration: none;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 430px) {
-    
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .carousel {
-        gap: 2%;
-    }
-    .carousel-item {
-        min-width: 49%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
+/* Medium devices */
+@media only screen and (min-width: 650px) {
     main {
         display: grid;
         grid-template-columns: 30% 60%;
@@ -254,5 +245,11 @@ footer a {
         height: fit-content;
         position: sticky;
         top: 60px;
+    }
+    .carousel {
+        gap: 2%;
+    }
+    .carousel-item {
+        min-width: 49%;
     }
 }
