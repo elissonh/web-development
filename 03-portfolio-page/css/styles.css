@@ -253,4 +253,12 @@ footer a {
     .carousel-item {
         min-width: 49%;
     }
+    #skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+    }
+    #skills h2 {
+        grid-column: 1 / -1;
+    }
 }
