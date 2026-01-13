@@ -62,8 +62,8 @@ function createTasks(){
     checkIcon = '<span class="material-symbols-outlined">check_circle</span>';
     unchekIcon = '<span class="material-symbols-outlined">circle</span>';
 
-    for (i=0; i<tasks.length; i++){
-        const { description, isDone } = tasks[i];
+    tasks.forEach((item, i) => {
+        const { description, isDone } = item;
         const taskContainer = `
             <div id="task-${i}" class="task ${isDone ? 'is-done' : ''}">
                 <button id="check-button" class="check-button" onclick="toogleTask(${i})">
@@ -76,5 +76,5 @@ function createTasks(){
             </div>
         `;
         tasksContainer.innerHTML += taskContainer;
-    }
+    })
 }
