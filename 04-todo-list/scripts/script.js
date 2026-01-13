@@ -35,7 +35,7 @@ function addTask() {
 }
 
 function deleteTask(index) {
-    tasks.splice(index, index+1);
+    tasks.splice(index, 1);
     document.getElementById(`task-${index}`).remove();
     persistTasks();
 }
