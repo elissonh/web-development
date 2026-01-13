@@ -54,6 +54,7 @@ function toogleTask(index) {
         taskContainerEl.classList.remove(className)
         checkButtonEl.firstElementChild.innerHTML = 'circle';
     }
+    persistTasks();
 }
 
 function createTasks(){
@@ -64,11 +65,11 @@ function createTasks(){
     for (i=0; i<tasks.length; i++){
         const { description, isDone } = tasks[i];
         const taskContainer = `
-            <div id="task-${i}" class="task">
-                <button id="check-button" class="check-button ${isDone ? 'is-done' : ''}" onclick="toogleTask(${i})">
+            <div id="task-${i}" class="task ${isDone ? 'is-done' : ''}">
+                <button id="check-button" class="check-button" onclick="toogleTask(${i})">
                     ${isDone ? checkIcon : unchekIcon}
                 </button>
-                <p ${isDone ? 'class="line-through"' : ''}>${description}</p>
+                <p>${description}</p>
                 <button class="delete-task-button" onclick="deleteTask(${i})">
                     <span class="material-symbols-outlined">close_small</span>
                 </button>
