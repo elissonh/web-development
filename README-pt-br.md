@@ -10,14 +10,14 @@ Este repositório é um espaço dedicado para os **projetos** que desenvolvi par
 
 Abaixo está uma lista dos projetos contidos neste repositório, categorizado por tecnologias e complexidade envolvida.
 
-### **Foundational Projects (HTML/CSS/JS Basics)**
+### **Projetos de Fundamentos (HTML/CSS/JS Basics)**
 
 | Nome do Projeto | Tecnologias | Foco / Objetivo de Aprendizado | Link do Projeto |
 | :--- | :--- | :--- | :--- |
 | **01-android-page** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade. | [Pasta do Projeto](./01-android-page) |
 | **02-cordel-literature-page** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade de textos, imagens de fundo. | [Pasta do Projeto](./02-cordel-literature-page) | -->
-<!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) |
-| **03-Landing-Page** | HTML, CSS | Responsive design (Flexbox/Grid), modern visual styling. | [Project Folder](./03-Landing-Page) | -->
+| **03-portfolio-page** | HTML, CSS e JavaScript | Estrutura Semântica de HTML, estilização com CSS, responsividade e interatividade com JavaScript. | [Pasta do Projeto](./03-portfolio-page) |
+| **04-todo-list** | HTML, CSS e JavaScript | Listas e DOM com JavaScript, Estrutura Semântica de HTML, estilização com CSS e responsividade. | [Pasta do Projeto](./04-todo-list) |
 
 <!-- ### **Intermediate Projects (Frameworks/Libraries)**
 
@@ -31,11 +31,9 @@ Abaixo está uma lista dos projetos contidos neste repositório, categorizado po
 
 Os projetos foram desenvolvidos utilizando as seguintes tecnologias:
 
-* **Frontend:** HTML5, CSS3 <!--, JavaScript (ES6+) -->
+* **Frontend:** HTML5, CSS3 e JavaScript
 <!-- * **Libraries/Frameworks:** React, Vue.js -->
 <!-- * **Styling:** Custom CSS, Tailwind CSS, SASS (as noted in project specifics) -->
 * **Controle de versão/Versionamento:** Git & GitHub
 
 ---
-
-*Created by elissonh*
