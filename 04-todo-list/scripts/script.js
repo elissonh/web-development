@@ -1,7 +1,6 @@
 const tasksContainer = document.getElementById('tasks-container');
 const input = document.getElementById('task-input');
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-let tasksNumRemovedItems = 0;
 
 createTasks()
 
@@ -36,11 +35,9 @@ function addTask() {
 }
 
 function deleteTask(index) {
-    const correctIndex = index - tasksNumRemovedItems;
-    tasks.splice(correctIndex, 1);
-    tasksNumRemovedItems++;
-    document.getElementById(`task-${index}`).remove();
+    tasks.splice(index, 1);
     persistTasks();
+    createTasks();
 }
 
 function toogleTask(index) {
@@ -61,7 +58,6 @@ function toogleTask(index) {
 }
 
 function createTasks(){
-    tasksNumRemovedItems = 0;
     tasksContainer.innerHTML = '';
     checkIcon = '<span class="material-symbols-outlined">check_circle</span>';
     unchekIcon = '<span class="material-symbols-outlined">circle</span>';
