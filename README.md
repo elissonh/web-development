@@ -1,4 +1,4 @@
-[![en](https://img.shields.io/badge/lang-en-red.svg)](./README)
+[![en](https://img.shields.io/badge/lang-en-red.svg)](./)
 [![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg)](./README-pt-br.html)
 
 # 💻 Web Development Practice Projects
