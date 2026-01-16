@@ -75,7 +75,7 @@ main p {
 }
 
 .cart-items-container img {
-    max-height: 100px;
+    height: 100px;
     max-width: 120px;
     object-fit: cover;
 }
@@ -89,11 +89,11 @@ main p {
 .highlight-text {
     font-size: 1rem;
     font-weight: 700;
+    line-height: 1.5rem;
 }
 .product-cart-update {
     display: flex;
     gap: 3px;
-    align-items: stretch;
 }
 .product-cart-update .material-symbols-outlined {
     background-color: var(--site-background-color);
@@ -118,9 +118,6 @@ main p {
 }
 .delivery-options {
     grid-column: 1 / span 2;
-}
-.delivery-options-title {
-    margin-bottom: 6px;
 }
 .delivery-option {
     display: flex;
