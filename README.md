@@ -19,6 +19,7 @@ Below is a list of the projects contained within this repository, categorized by
 | **02-cordel-literature-page** | HTML and CSS | Semantic HTML structure, basic CSS layout, responsiveness text, background images. | [Project Folder](./02-cordel-literature-page) |
 | **03-portfolio-page** | HTML, CSS and JavaScript | Semantic HTML structure, CSS layout, responsiveness and JavaScript. | [Project Folder](./03-portfolio-page) |
 | **04-todo-list** | HTML, CSS and JavaScript | JavaScript lists and DOM, Semantic HTML structure, CSS layout and responsiveness. | [Project Folder](./04-todo-list) |
+| **05-shop-page** | HTML, CSS and JavaScript | JavaScript, Semantic HTML structure, CSS layout and responsiveness. | [Project Folder](./05-shop-page) |
 
 <!-- ### **Intermediate Projects (Frameworks/Libraries)**
 
