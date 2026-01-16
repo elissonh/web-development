@@ -25,6 +25,10 @@ img {
     width: 100%;
 }
 
+.display-none {
+    display: none !important;
+}
+
 /* Header */
 .site-header {
     border-bottom: 1px solid var(--header-footer-line-color);
