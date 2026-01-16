@@ -71,7 +71,7 @@ main {
     color: grey;
 }
 .product-item-image {
-    object-fit: fill;
+    object-fit: cover;
     height: 200px;
 }
 .product-item-price {
