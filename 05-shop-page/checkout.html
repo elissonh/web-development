@@ -15,7 +15,7 @@
     <body>
         <div class="site">
             <header class="site-header">
-                <p class="site-name">Insane Shop</p>
+                <p class="site-name">Cool Shop</p>
                 <h1 class="site-title">Checkout</h1>
                 <span class="material-symbols-outlined">shopping_bag</span>
             </header>
@@ -27,111 +27,33 @@
                     <div class="container payment-summary-container">
                         <h2>Order Summary</h2>
                         <div class="payment-summary-row border-bottom">
-                            <p>Items (<span class="cart-product-count"></span>):</p>
-                            <p><span>R$</span>42.75</p>
+                            <p>Items (<span class="js-cart-product-count"></span>):</p>
+                            <p class="js-cart-items-cost"><span>R$</span>0</p>
                         </div>
                         <div class="payment-summary-row">
                             <p>Shipping & handling:</p>
-                            <p><span>R$</span>4.99</p>
+                            <p class="js-cart-shipping-cost"><span>R$</span>0</p>
                         </div>
                         <div class="payment-summary-row">
                             <p>Total before tax:</p>
-                            <p><span>R$</span>47.74</p>
+                            <p class="js-cart-total-no-tax"><span>R$</span>0</p>
                         </div>
                         <div class="payment-summary-row">
-                            <p>Estimated tax (10%):</p>
-                            <p><span>$</span>4.77</p>
+                            <p>Estimated tax (<span class="js-cart-tax-percentage">0</span>%):</p>
+                            <p class="js-cart-tax-cost"><span>R$</span></p>
                         </div>
                         <div class="payment-summary-row border-top-bottom emphasized-text">
                             <p>Order total:</p>
-                            <p><span>$</span>52.51</p>
+                            <p class="js-cart-total-cost"><span>R$</span>0</p>
                         </div>
                         <button class="order-button">Order</button>
                     </div>
                     <div class="cart-items-container">
-                        <div class="cart-item container">
-                            <img src="./assets/products/watch.jpg" alt="Product image" class="product-image">
-                            <div class="product-info">
-                                <p class="product-name highlight-text">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-                                <p class="product-price"><span>R$</span>9.99</p>
-                                <div class="product-quantity">
-                                    <p>Quantity: <span>2</span></p>
-                                </div>
-                                <div class="product-cart-update">
-                                    <span class="material-symbols-outlined">add</span>
-                                    <span class="material-symbols-outlined">remove</span>
-                                    <span class="product-delete-button">Delete</span>
-                                </div>
-                            </div>
-                            <div class="delivery-options">
-                                <p class="delivery-options-title highlight-text">Choose a delivery option</p>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Tuesday, 13 January</p>
-                                        <p class="delivery-option-price">FREE</p>
-                                    </div>
-                                </div>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Friday, 9 January</p>
-                                        <p class="delivery-option-price"><span class="currency">R$</span>4.99</p>
-                                    </div>
-                                </div>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Wednesday, 7 January</p>
-                                        <p class="delivery-option-price"><span class="currency">R$</span>9.99</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-item container">
-                            <img src="./assets/products/watch.jpg" alt="Product image" class="product-image">
-                            <div class="product-info">
-                                <p class="product-name highlight-text">Product Name</p>
-                                <p class="product-price"><span>R$</span>9.99</p>
-                                <div class="product-quantity">
-                                    <p>Quantity: <span>2</span></p>
-                                </div>
-                                <div class="product-cart-update">
-                                    <span class="material-symbols-outlined">add</span>
-                                    <span class="material-symbols-outlined">remove</span>
-                                    <span class="product-delete-button">Delete</span>
-                                </div>
-                            </div>
-                            <div class="delivery-options">
-                                <p class="delivery-options-title highlight-text">Choose a delivery option</p>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Tuesday, 13 January</p>
-                                        <p class="delivery-option-price">FREE</p>
-                                    </div>
-                                </div>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Friday, 9 January</p>
-                                        <p class="delivery-option-price"><span class="currency">R$</span>4.99</p>
-                                    </div>
-                                </div>
-                                <div class="delivery-option">
-                                    <input type="radio" name="delivery-option-x" class="delivery-option-input">
-                                    <div>
-                                        <p class="delivery-option-date">Wednesday, 7 January</p>
-                                        <p class="delivery-option-price"><span class="currency">R$</span>9.99</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </main>
             <footer class="site-footer">
-                <h1>Insane Shop</h1>
+                <h1>Cool Shop</h1>
                 <menu class="social-medias">
                     <ul>
                         <li>
