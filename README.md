@@ -18,8 +18,7 @@ Below is a list of the projects contained within this repository, categorized by
 | **01-android-page** | HTML and CSS | Semantic HTML structure, basic CSS layout, responsiveness. | [Project Folder](./01-android-page) |
 | **02-cordel-literature-page** | HTML and CSS | Semantic HTML structure, basic CSS layout, responsiveness text, background images. | [Project Folder](./02-cordel-literature-page) |
 | **03-portfolio-page** | HTML, CSS and JavaScript | Semantic HTML structure, CSS layout, responsiveness and JavaScript. | [Project Folder](./03-portfolio-page) |
-| **04-todo-list** | HTML, CSS and JavaScript | JavaScript lists and DOM, Semantic HTML structure, CSS layout and responsiveness. | [Project Folder](./04-todo-listV) |
-<!-- | **02-Calculator** | HTML, CSS, JS | DOM manipulation, event handling, basic arithmetic logic. | [Project Folder](./02-Calculator) |
+| **04-todo-list** | HTML, CSS and JavaScript | JavaScript lists and DOM, Semantic HTML structure, CSS layout and responsiveness. | [Project Folder](./04-todo-list) |
 
 <!-- ### **Intermediate Projects (Frameworks/Libraries)**
 
