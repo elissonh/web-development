@@ -4,6 +4,7 @@
     --text-font: "Delius", cursive;
     --text-color: black;
     --text-inverse-color: #ffffff;
+    --body-background-color: #768686;
     --primary-color: #88DEBD;
     --main-background-color: #ffffff;
     --task-background-color: rgba(0, 0, 0, 0.05);
@@ -46,6 +47,7 @@ h1 {
 }
 body {
     min-height: 100vh;
+    background-color: var(--body-background-color);
     background-image: url(../assets/bg.svg);
     background-size: cover;
     color: var(--text-color);
