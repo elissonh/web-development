@@ -19,7 +19,7 @@ Abaixo está uma lista dos projetos contidos neste repositório, categorizado po
 | **02-projeto-cordel** | HTML, CSS | Estrutura Semântica de HTML, layout básico de CSS, responsividade de textos, imagens de fundo. | [Pasta do Projeto](./02-cordel-literature-page) |
 | **03-página-portfolio** | HTML, CSS e JavaScript | Estrutura Semântica de HTML, estilização com CSS, responsividade e interatividade com JavaScript. | [Pasta do Projeto](./03-portfolio-page) |
 | **04-lista-de-tarefas** | HTML, CSS e JavaScript | Listas e DOM com JavaScript, Estrutura Semântica de HTML, estilização com CSS e responsividade. | [Pasta do Projeto](./04-todo-list) |
-| **05-página-loja** | HTML, CSS e JavaScript | JavaScript, Estrutura Semântica de HTML, estilização com CSS e responsividade. | [Pasta do Projeto](./05-shop-page) |
+| **05-página-loja** ![Dev](https://img.shields.io/badge/Em_desenvolvimento-yellow) | HTML, CSS e JavaScript | JavaScript, Estrutura Semântica de HTML, estilização com CSS e responsividade. | [Pasta do Projeto](./05-shop-page) |
 
 <!-- ### **Intermediate Projects (Frameworks/Libraries)**
 
