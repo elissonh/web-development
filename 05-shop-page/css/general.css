@@ -24,6 +24,12 @@ body {
 img {
     width: 100%;
 }
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: inherit;
+}
 
 .display-none {
     display: none !important;
