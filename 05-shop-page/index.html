@@ -21,15 +21,27 @@
             <main>
                 <header class="products-container-header">
                     <h1>Produtos</h1>
-                    <nav>
-                        <a class="cart-nav" href="./checkout.html">
-                            <span class="material-symbols-outlined">shopping_bag</span>
-                            <p class="js-cart-product-count cart-product-count display-none">0</p>
-                        </a>
-                    </nav>
+                    <div class="js-open-cart-sidebar open-cart-sidebar">
+                        <span class="material-symbols-outlined hover-background">shopping_bag</span>
+                        <p class="js-cart-product-count cart-product-count display-none">0</p>
+                    </div>
                 </header>
                 <section class="js-products-container products-container">
                 </section>
+                <div class="js-nav-sidebar nav-cart-sidebar">
+                    <div class="sidebar-header margin-below">
+                        <span class="material-symbols-outlined">shopping_bag</span>
+                        <h2>Your Cart(<span class="js-sidebar-cart-count sidebar-cart-count">0</span>)</h2>
+                        <span class="js-close-cart-sidebar hover-background pointer-cursor material-symbols-outlined">close</span>
+                    </div>
+                    <div class="js-sidebar-items sidebar-items">
+                    </div>
+                    <div class="sidebar-order-summary margin-above">
+                        <p class="order-subtotal bold">Subtotal:<span class="js-sidebar-order-cost sidebar-order-cost"></span></p>
+                        <a href="./checkout.html"><button class="checkout-button">Checkout</button></a>
+                    </div>
+                </div class="nav-cart-sidebar">
+                <div id="overlay"></div>
             </main>
             <footer class="site-footer">
                 <h1>Cool Shop</h1>

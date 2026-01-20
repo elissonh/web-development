@@ -6,6 +6,7 @@
     --bar-icon-color: #000000;
     --container-background-color: #FFFFFF;
     --container-radius: 10px;
+    --danger-color: #9c2121;
 }
 
 * {
@@ -30,9 +31,23 @@ a {
 a:visited {
     color: inherit;
 }
-
 .display-none {
     display: none !important;
+}
+.margin-above {
+    border-top: 1px solid var(--header-footer-line-color);
+}
+.margin-below {
+    border-bottom: 1px solid var(--header-footer-line-color);
+}
+.bold {
+    font-weight: 700;
+}
+.dimmed-text {
+    font-size: .9rem;
+}
+.pointer-cursor {
+    cursor: pointer;
 }
 
 /* Header */
@@ -74,4 +89,17 @@ a:visited {
 .site-footer menu.social-medias a > i {
     font-size: 1rem;
     vertical-align: middle;
+}
+.two-lines-text {
+    height: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* Explicitly allow up to 2 lines */
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+}
+.hover-background:hover {
+    background-color: rgb(220, 220, 220);
+    border-radius: 50%;
 }

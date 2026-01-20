@@ -21,8 +21,8 @@ export function renderOrderSummary() {
                         <p>Quantity: <span>${cartItem.quantity}</span></p>
                     </div>
                     <div class="product-cart-update">
-                        <span class="js-cart-increase-product  material-symbols-outlined">add</span>
-                        <span class="js-cart-decrease-product  material-symbols-outlined">remove</span>
+                        <span class="js-cart-increase-product material-symbols-outlined">add</span>
+                        <span class="js-cart-decrease-product material-symbols-outlined">remove</span>
                         <span class="js-cart-delete-product product-delete-button">Delete</span>
                     </div>
                 </div>

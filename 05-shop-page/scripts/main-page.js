@@ -1,8 +1,19 @@
 import { products } from './products.js';
-import { addToCart, getCartCount } from './cart.js'
+import { cart, addToCart, getCartCount, increaseItemCount, decreaseItemCount, deleteItem, getItemsCostCents } from './cart.js'
 import { convertCentsToMoney } from './utils/utils.js'
 
-renderProducts();
+const sidebarEl = document.querySelector('.js-nav-sidebar');
+const sidebarItemsContainerEl = document.querySelector('.js-sidebar-items');
+
+renderPage();
+
+function renderPage() {
+    updateCartCountElement();
+    renderProducts();
+    renderCartSidebar();
+    addEventListeners();
+}
+
 
 function updateCartCountElement() {
     const cartTotalCount = getCartCount()
@@ -17,7 +28,7 @@ function updateCartCountElement() {
     }
 }
 
-function renderProducts(){
+function renderProducts() {
     let productsContainer = document.querySelector('.js-products-container');
     productsContainer.innerHTML = '';
 
@@ -36,16 +47,102 @@ function renderProducts(){
         </div>
         `;
         productsContainer.innerHTML += productItemHtml;
-
+    })
     updateCartCountElement();
+}
 
+function renderCartSidebar() {
+    const cartCount = getCartCount();
+    const sidebarCartCountEl = document.querySelector('.js-sidebar-cart-count');
+    const sidebarOrderCostEl = document.querySelector('.js-sidebar-order-cost');
+    const itemsCostCents = getItemsCostCents()
+
+    sidebarCartCountEl.innerHTML = cartCount;
+    sidebarOrderCostEl.innerHTML = convertCentsToMoney(itemsCostCents);
+
+    if (cartCount <= 0) {
+        sidebarItemsContainerEl.innerHTML = 'Carrinho vazio :(';
+        console.log(sidebarItemsContainerEl);
+        return
+    }
+    sidebarItemsContainerEl.innerHTML = '';
+    cart.forEach((cartItem) => {
+        const productObj = products[cartItem.productId]
+        const sidebarItemHtml = `
+        <div class="js-sidebar-item sidebar-item" data-product-id="${cartItem.productId}">
+            <img src=".${productObj.imagePath}" alt="" class="sidebar-item-image">
+            <div class="side-item-details">
+                <div class="product-title">
+                    <p class="bold two-lines-text">${productObj.title}</p>
+                    <span class="js-cart-delete-product product-cart-delete material-symbols-outlined">delete</span>
+                </div>
+                <p class="dimmed-text">R$<span>${convertCentsToMoney(productObj.priceCents)}</span></p>
+                <div class="cart-item-update-options">
+                    <span class="js-cart-decrease-product product-cart-update material-symbols-outlined">remove</span>
+                    <span class="js-cart-item-quantity cart-item-quantity dimmed-text">${cartItem.quantity}</span>
+                    <span class="js-cart-increase-product product-cart-update material-symbols-outlined">add</span>
+                </div>
+            </div>
+        </div>
+        `
+        sidebarItemsContainerEl.innerHTML += sidebarItemHtml;
+    })
+}
+
+function addEventListeners() {
     document.querySelectorAll(".js-add-to-cart")
         .forEach((item) => {
             item.addEventListener('click', () => {
                 const productId = item.dataset.productId;
                 addToCart(productId, 1);
-                updateCartCountElement();
+                renderPage();
             })
         });
-    })
+    document.querySelectorAll('.js-open-cart-sidebar')
+        .forEach((element) => {
+            element.addEventListener('click', () => {
+                openSideBar();
+                renderPage();
+            })
+        })
+    document.querySelectorAll('.js-close-cart-sidebar')
+        .forEach((element) => {
+            element.addEventListener('click', () => {
+                closeSideBar();
+                renderPage();
+            })
+        })
+    document.getElementById('overlay')
+        .addEventListener('click', () => {
+            closeSideBar();
+            renderPage();
+        })
+
+    document.querySelectorAll('.js-sidebar-item')
+        .forEach((element) => {
+            const productId = element.dataset.productId;
+            element.querySelector('.js-cart-increase-product')
+                    .addEventListener('click', () => {
+                        increaseItemCount(productId);
+                        renderPage();
+                    });
+            element.querySelector('.js-cart-decrease-product')
+                .addEventListener('click', () => {
+                    decreaseItemCount(productId);
+                    renderPage();
+                });
+            element.querySelector('.js-cart-delete-product')
+                .addEventListener('click', () => {
+                    deleteItem(productId);
+                    renderPage();
+                });
+        })
+}
+
+function openSideBar() {
+    sidebarEl.classList.add('show');
+}
+
+function closeSideBar() {
+    sidebarEl.classList.remove('show');
 }
