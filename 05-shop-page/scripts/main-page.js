@@ -62,7 +62,6 @@ function renderCartSidebar() {
 
     if (cartCount <= 0) {
         sidebarItemsContainerEl.innerHTML = 'Carrinho vazio :(';
-        console.log(sidebarItemsContainerEl);
         return
     }
     sidebarItemsContainerEl.innerHTML = '';

@@ -30,7 +30,6 @@ export function renderOrderSummary() {
                     <p class="delivery-options-title highlight-text">Choose a delivery option</p>
                     ${getDeliveryOptionsHtml(cartItem.productId, cartItem.deliveryOptionId)}
                 </div>
-                
             </div>
         `
         cartItemsContainerEl.innerHTML += cartItemHtml;
