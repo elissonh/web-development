@@ -3,6 +3,7 @@ import { products } from "../products.js";
 import { deliveryOptions } from "../delivery-options.js";
 import { convertCentsToMoney } from '../utils/utils.js'
 import { addDays, formatDateToString } from "../utils/date.js";
+import { renderCheckout } from "../checkout.js";
 
 export function renderOrderSummary() {
     const cartItemsContainerEl = document.querySelector('.cart-items-container');
@@ -70,24 +71,24 @@ function addEventListeners() {
         cartItemEl.querySelector('.js-cart-increase-product')
             .addEventListener('click', () => {
                 increaseItemCount(productId);
-                renderOrderSummary();
+                renderCheckout();
             });
         cartItemEl.querySelector('.js-cart-decrease-product')
             .addEventListener('click', () => {
                 decreaseItemCount(productId);
-                renderOrderSummary();
+                renderCheckout();
             });
         cartItemEl.querySelector('.js-cart-delete-product')
             .addEventListener('click', () => {
                 deleteItem(productId);
-                renderOrderSummary();
+                renderCheckout();
             });
 
         cartItemEl.querySelectorAll('.js-delivery-option').forEach((element) => {
             const deliveryOptionId = element.dataset.deliveryOptionId;
             element.addEventListener('click', () => {
                 updateDeliveryOption(productId, deliveryOptionId);
-                renderOrderSummary();
+                renderCheckout();
             })
         })
     })
