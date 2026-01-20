@@ -5,15 +5,15 @@ import { convertCentsToMoney } from './utils/utils.js'
 const sidebarEl = document.querySelector('.js-nav-sidebar');
 const sidebarItemsContainerEl = document.querySelector('.js-sidebar-items');
 
+
+renderProducts();
 renderPage();
 
 function renderPage() {
     updateCartCountElement();
-    renderProducts();
     renderCartSidebar();
     addEventListeners();
 }
-
 
 function updateCartCountElement() {
     const cartTotalCount = getCartCount()
@@ -48,7 +48,15 @@ function renderProducts() {
         `;
         productsContainer.innerHTML += productItemHtml;
     })
-    updateCartCountElement();
+
+    document.querySelectorAll(".js-add-to-cart")
+        .forEach((item) => {
+            item.addEventListener('click', () => {
+                const productId = item.dataset.productId;
+                addToCart(productId, 1);
+                renderPage();
+            })
+        });
 }
 
 function renderCartSidebar() {
@@ -89,32 +97,21 @@ function renderCartSidebar() {
 }
 
 function addEventListeners() {
-    document.querySelectorAll(".js-add-to-cart")
-        .forEach((item) => {
-            item.addEventListener('click', () => {
-                const productId = item.dataset.productId;
-                addToCart(productId, 1);
-                renderPage();
-            })
-        });
     document.querySelectorAll('.js-open-cart-sidebar')
         .forEach((element) => {
             element.addEventListener('click', () => {
                 openSideBar();
-                renderPage();
             })
         })
     document.querySelectorAll('.js-close-cart-sidebar')
         .forEach((element) => {
             element.addEventListener('click', () => {
                 closeSideBar();
-                renderPage();
             })
         })
     document.getElementById('overlay')
         .addEventListener('click', () => {
             closeSideBar();
-            renderPage();
         })
 
     document.querySelectorAll('.js-sidebar-item')
