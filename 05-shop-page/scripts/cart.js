@@ -64,15 +64,14 @@ export function addToCart(productId, quantity) {
     saveToStorage();
 }
 
-export function getItemsOnlyCost() {
+export function getItemsCostCents() {
     let total = 0;
-
     cart.forEach(element => {
         const productObj = products[element.productId];
         const productPriceCents = productObj.priceCents;
         total += (productPriceCents * element.quantity)
     });
-    total = convertCentsToMoney(total);
+
     return total;
 }
 
