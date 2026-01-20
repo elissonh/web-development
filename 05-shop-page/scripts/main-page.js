@@ -1,11 +1,23 @@
 import { products } from './products.js';
-import { addToCart, updateCartCountElements } from './cart.js'
+import { addToCart, getCartCount } from './cart.js'
 import { convertCentsToMoney } from './utils/utils.js'
 
-initializeProducts();
-updateCartCountElements(true);
+renderProducts();
 
-function initializeProducts(){
+function updateCartCountElement() {
+    const cartTotalCount = getCartCount()
+    const productCountEl = document.querySelector(".js-cart-product-count");
+
+    if (cartTotalCount > 0) {
+        productCountEl.classList.remove('display-none');
+        productCountEl.innerHTML = cartTotalCount > 9 ? '9+' : cartTotalCount;
+    } else {
+        productCountEl.classList.add('display-none');
+        productCountEl.innerHTML = '';
+    }
+}
+
+function renderProducts(){
     let productsContainer = document.querySelector('.js-products-container');
     productsContainer.innerHTML = '';
 
@@ -24,13 +36,16 @@ function initializeProducts(){
         </div>
         `;
         productsContainer.innerHTML += productItemHtml;
+
+    updateCartCountElement();
+
+    document.querySelectorAll(".js-add-to-cart")
+        .forEach((item) => {
+            item.addEventListener('click', () => {
+                const productId = item.dataset.productId;
+                addToCart(productId, 1);
+                updateCartCountElement();
+            })
+        });
     })
 }
-
-document.querySelectorAll(".js-add-to-cart")
-    .forEach((item) => {
-        item.addEventListener('click', () => {
-            const productId = item.dataset.productId;
-            addToCart(productId, 1);
-        })
-    });
