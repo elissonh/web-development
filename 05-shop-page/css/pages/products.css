@@ -103,7 +103,7 @@ main {
 }
 .nav-cart-sidebar {
     background-color: white;
-    height: 100vh;
+    height: 100dvh;
     width: min(30em, 80%);
     position: fixed;
     right: -100%;
