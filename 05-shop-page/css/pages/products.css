@@ -104,7 +104,7 @@ main {
 .nav-cart-sidebar {
     background-color: white;
     height: 100vh;
-    width: min(20em, 100%);
+    width: min(30em, 80%);
     position: fixed;
     right: -100%;
     top: 0;
@@ -112,6 +112,7 @@ main {
     box-shadow: -3px 0 12px rgba(0, 0, 0, 0.3);
     z-index: 10;
     transition: right 300ms ease-out;
+    overflow-y: auto;
 }
 .sidebar-header {
     display: flex;
@@ -188,7 +189,7 @@ main {
     border: none;
     background-color: var(--primary-color);
     color: white;
-    margin: 16px auto 0px auto;
+    margin: 16px auto 16px auto;
     cursor: pointer;
     transition: background-color .5s;
 }

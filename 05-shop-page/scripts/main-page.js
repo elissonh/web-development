@@ -137,8 +137,18 @@ function addEventListeners() {
 
 function openSideBar() {
     sidebarEl.classList.add('show');
+    removeBodyScroll();
 }
 
 function closeSideBar() {
     sidebarEl.classList.remove('show');
+    addBodyScroll();
+}
+
+function removeBodyScroll() {
+    document.body.style.overflow = 'hidden';
+}
+
+function addBodyScroll() {
+    document.body.style.overflow = 'auto';
 }
