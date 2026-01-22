@@ -1,10 +1,12 @@
-import { products } from './products.js';
-import { cart, addToCart, getCartCount, increaseItemCount, decreaseItemCount, deleteItem, getItemsCostCents } from './cart.js'
+import { products } from './data/products.js';
+import { Cart } from './cart.js';
 import { convertCentsToMoney } from './utils/utils.js'
+import { getItemsCostCents } from './utils/math.js';
+
+const cart = new Cart();
 
 const sidebarEl = document.querySelector('.js-nav-sidebar');
 const sidebarItemsContainerEl = document.querySelector('.js-sidebar-items');
-
 
 renderProducts();
 renderPage();
@@ -16,7 +18,7 @@ function renderPage() {
 }
 
 function updateCartCountElement() {
-    const cartTotalCount = getCartCount()
+    const cartTotalCount = cart.getItemsCount()
     const productCountEl = document.querySelector(".js-cart-product-count");
 
     if (cartTotalCount > 0) {
@@ -53,17 +55,17 @@ function renderProducts() {
         .forEach((item) => {
             item.addEventListener('click', () => {
                 const productId = item.dataset.productId;
-                addToCart(productId, 1);
+                cart.addToCart(productId, 1);
                 renderPage();
             })
         });
 }
 
 function renderCartSidebar() {
-    const cartCount = getCartCount();
+    const cartCount = cart.getItemsCount();
     const sidebarCartCountEl = document.querySelector('.js-sidebar-cart-count');
     const sidebarOrderCostEl = document.querySelector('.js-sidebar-order-cost');
-    const itemsCostCents = getItemsCostCents()
+    const itemsCostCents = getItemsCostCents(cart);
 
     sidebarCartCountEl.innerHTML = cartCount;
     sidebarOrderCostEl.innerHTML = convertCentsToMoney(itemsCostCents);
@@ -73,7 +75,7 @@ function renderCartSidebar() {
         return
     }
     sidebarItemsContainerEl.innerHTML = '';
-    cart.forEach((cartItem) => {
+    cart.items.forEach((cartItem) => {
         const productObj = products[cartItem.productId]
         const sidebarItemHtml = `
         <div class="js-sidebar-item sidebar-item" data-product-id="${cartItem.productId}">
@@ -119,17 +121,17 @@ function addEventListeners() {
             const productId = element.dataset.productId;
             element.querySelector('.js-cart-increase-product')
                     .addEventListener('click', () => {
-                        increaseItemCount(productId);
+                        cart.increaseItemCount(productId);
                         renderPage();
                     });
             element.querySelector('.js-cart-decrease-product')
                 .addEventListener('click', () => {
-                    decreaseItemCount(productId);
+                    cart.decreaseItemCount(productId);
                     renderPage();
                 });
             element.querySelector('.js-cart-delete-product')
                 .addEventListener('click', () => {
-                    deleteItem(productId);
+                    cart.deleteItem(productId);
                     renderPage();
                 });
         })

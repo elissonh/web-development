@@ -1,6 +1,8 @@
-import { cart, getCartCount, getItemsCostCents } from "../cart.js";
-import { deliveryOptions } from "../delivery-options.js";
+// import { Cart } from "../cartClass.js";
+import { cart } from "../checkout.js";
+import { deliveryOptions } from "../data/delivery-options.js";
 import { convertCentsToMoney } from "../utils/utils.js";
+import { getItemsCostCents } from '../utils/math.js'
 
 const cartTextPercentEl = document.querySelector('.js-cart-tax-percentage');
 const cartItemsCostEl = document.querySelector('.js-cart-items-cost');
@@ -12,7 +14,7 @@ const taxPercentageValue = 10;
 const currency = 'R$';
 
 export function renderPaymentSummary() {
-    const itemsCostCents = getItemsCostCents();
+    const itemsCostCents = getItemsCostCents(cart);
     const shippingCostCents = getShippingCostCents();
     const totalNoTaxCents = itemsCostCents + shippingCostCents
     const taxCostCents = itemsCostCents * (taxPercentageValue / 100);
@@ -29,20 +31,21 @@ export function renderPaymentSummary() {
 
 function getShippingCostCents() {
     let total = 0;
-    cart.forEach(cartItem => {
+    cart.items.forEach(cartItem => {
         const deliveryOption = deliveryOptions[cartItem.deliveryOptionId]
         total += deliveryOption.priceCents;
+        console.log(cart);
     });
     return total;
 }
 
 function updateCartCountElement() {
-    const cartTotalCount = getCartCount()
+    const cartItemsCount = cart.getItemsCount()
     const productCountEl = document.querySelector(".js-cart-product-count");
 
-    if (cartTotalCount > 0) {
+    if (cartItemsCount > 0) {
         productCountEl.classList.remove('display-none');
-        productCountEl.innerHTML = cartTotalCount > 9 ? '9+' : cartTotalCount;
+        productCountEl.innerHTML = cartItemsCount > 9 ? '9+' : cartItemsCount;
     } else {
         productCountEl.classList.add('display-none');
         productCountEl.innerHTML = '';

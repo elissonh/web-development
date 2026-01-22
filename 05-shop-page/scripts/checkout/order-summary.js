@@ -1,15 +1,18 @@
-import { cart, increaseItemCount, decreaseItemCount, deleteItem, updateDeliveryOption} from "../cart.js"
-import { products } from "../products.js";
-import { deliveryOptions } from "../delivery-options.js";
+// import { cart, increaseItemCount, decreaseItemCount, deleteItem, updateDeliveryOption} from "../cart.js"
+import { cart } from "../checkout.js";
+import { products } from "../data/products.js";
+import { deliveryOptions } from "../data/delivery-options.js";
 import { convertCentsToMoney } from '../utils/utils.js'
 import { addDays, formatDateToString } from "../utils/date.js";
 import { renderCheckout } from "../checkout.js";
+
+
 
 export function renderOrderSummary() {
     const cartItemsContainerEl = document.querySelector('.cart-items-container');
 
     cartItemsContainerEl.innerHTML = '';
-    cart.forEach(cartItem => {
+    cart.items.forEach(cartItem => {
         const productObj = products[cartItem.productId];
         const cartItemHtml = `
             <div class="js-cart-item cart-item container" data-product-id=${cartItem.productId}>
@@ -69,24 +72,24 @@ function addEventListeners() {
 
         cartItemEl.querySelector('.js-cart-increase-product')
             .addEventListener('click', () => {
-                increaseItemCount(productId);
+                cart.increaseItemCount(productId);
                 renderCheckout();
             });
         cartItemEl.querySelector('.js-cart-decrease-product')
             .addEventListener('click', () => {
-                decreaseItemCount(productId);
+                cart.decreaseItemCount(productId);
                 renderCheckout();
             });
         cartItemEl.querySelector('.js-cart-delete-product')
             .addEventListener('click', () => {
-                deleteItem(productId);
+                cart.deleteItem(productId);
                 renderCheckout();
             });
 
         cartItemEl.querySelectorAll('.js-delivery-option').forEach((element) => {
             const deliveryOptionId = element.dataset.deliveryOptionId;
             element.addEventListener('click', () => {
-                updateDeliveryOption(productId, deliveryOptionId);
+                cart.updateDeliveryOption(productId, deliveryOptionId);
                 renderCheckout();
             })
         })
