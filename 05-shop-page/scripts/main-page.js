@@ -1,5 +1,5 @@
 import { products } from './data/products.js';
-import { Cart } from './cart.js';
+import { Cart } from './models/cart.js';
 import { convertCentsToMoney } from './utils/utils.js'
 import { getItemsCostCents } from './utils/math.js';
 
@@ -38,11 +38,11 @@ function renderProducts() {
     Object.entries(products).forEach(([_, item]) => {
         const productItemHtml = `
         <div class="product-item"">
-            <img src=".${item.imagePath}" alt="Product image" class="product-item-image">
+            <img src="${item.imagePath}" alt="Product image" class="product-item-image">
             <div class="product-item-description">
                 <h2>${item.title}</h2>
                 <div class="product-item-price">
-                    <p><span class="currency">R$</span> ${convertCentsToMoney(item.priceCents)}</p>
+                    <p><span class="currency">R$</span>${item.getPriceMoney()}</p>
                     <span class="js-add-to-cart material-symbols-outlined add-to-cart" data-product-id="${item.id}">shopping_bag</span>
                 </div>
             </div>
@@ -76,10 +76,10 @@ function renderCartSidebar() {
     }
     sidebarItemsContainerEl.innerHTML = '';
     cart.items.forEach((cartItem) => {
-        const productObj = products[cartItem.productId]
+        const productObj = products[cartItem.productId];
         const sidebarItemHtml = `
         <div class="js-sidebar-item sidebar-item" data-product-id="${cartItem.productId}">
-            <img src=".${productObj.imagePath}" alt="" class="sidebar-item-image">
+            <img src="${productObj.imagePath}" alt="" class="sidebar-item-image">
             <div class="side-item-details">
                 <div class="product-title">
                     <p class="bold two-lines-text">${productObj.title}</p>

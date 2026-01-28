@@ -16,7 +16,7 @@ export function renderOrderSummary() {
         const productObj = products[cartItem.productId];
         const cartItemHtml = `
             <div class="js-cart-item cart-item container" data-product-id=${cartItem.productId}>
-                <img src=".${productObj.imagePath}" alt="Product image" class="product-image">
+                <img src="${productObj.imagePath}" alt="Product image" class="product-image">
                 <div class="product-info">
                     <p class="product-name highlight-text">${productObj.title}</p>
                     <p class="product-price"><span>R$</span>${convertCentsToMoney(productObj.priceCents)}</p>

@@ -1,5 +1,5 @@
 // import { isCartEmpty } from "./cart.js"
-import { Cart } from "./cart.js";
+import { Cart } from "./models/cart.js";
 import { renderOrderSummary } from "./checkout/order-summary.js"
 import { renderPaymentSummary } from "./checkout/payment-summary.js";
 
