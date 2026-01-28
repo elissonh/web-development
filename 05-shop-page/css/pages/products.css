@@ -12,7 +12,7 @@ main {
 }
 .products-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 .products-container-header {
@@ -218,30 +218,30 @@ main {
 
 @media (min-width: 1600px) {
     .products-container {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(7, 1fr);
     }
 }
 
 @media (min-width: 1301px) and (max-width: 1600px) {
     .products-container {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
     }
 }
 
 @media (min-width: 1001px) and (max-width: 1300px) {
     .products-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
 @media (min-width: 801px) and (max-width: 1000px){
     .products-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (min-width: 575px) and (max-width: 800px){
     .products-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
