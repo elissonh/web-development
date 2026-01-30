@@ -74,6 +74,9 @@ main {
     object-fit: cover;
     aspect-ratio: 1 / 1;
 }
+.product-item-rating {
+    margin-top: 3px;
+}
 .product-item-price {
     display: flex;
     justify-content: space-between;

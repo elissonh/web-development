@@ -34,13 +34,24 @@ function renderProducts() {
     let productsContainer = document.querySelector('.js-products-container');
     productsContainer.innerHTML = '';
 
+    const ratingStarHtml = '<span class="fa fa-star"></span>';
+    const ratingStarCheckedHtml = '<span class="fa fa-star checked"></span>';
+
     // Loop through items in products object
     Object.entries(products).forEach(([_, item]) => {
+        let productRatingHTML = Array(5).fill(ratingStarHtml);
+        productRatingHTML = productRatingHTML.fill(ratingStarCheckedHtml, 0, Math.trunc(item.rating));
+
+        console.log(Math.trunc(item.rating), productRatingHTML);
+
         const productItemHtml = `
         <div class="product-item"">
             <img src="${item.imagePath}" alt="Product image" class="product-item-image">
             <div class="product-item-description">
                 <h2>${item.title}</h2>
+                <div class="product-item-rating" title="${item.rating}">
+                    ${productRatingHTML.join('')}
+                </div>
                 <div class="product-item-price">
                     <p><span class="currency">R$</span>${item.getPriceMoney()}</p>
                     <span class="js-add-to-cart material-symbols-outlined add-to-cart" data-product-id="${item.id}">shopping_bag</span>
