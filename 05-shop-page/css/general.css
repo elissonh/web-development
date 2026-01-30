@@ -50,6 +50,10 @@ a:visited {
     cursor: pointer;
 }
 
+span.fa.fa-star.checked {
+    color: orange;
+}
+
 /* Header */
 .site-header {
     border-bottom: 1px solid var(--header-footer-line-color);
